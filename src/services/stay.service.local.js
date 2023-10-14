@@ -21,14 +21,11 @@ async function query(filterBy = { txt: '', price: 0 }) {
   if (filterBy.txt) {
     const regex = new RegExp(filterBy.txt, 'i')
     stays = stays.filter(
-      (stay) =>
-        regex.test(stay.title) || regex.test(stay.description)
+      (stay) => regex.test(stay.title) || regex.test(stay.description)
     )
   }
   if (filterBy.price) {
-    stays = stays.filter(
-      (stay) => stay.price <= filterBy.price
-    )
+    stays = stays.filter((stay) => stay.price <= filterBy.price)
   }
   return stays
 }
@@ -258,6 +255,7 @@ function getEmptyStay() {
 //         id: 'b847a395-1c22-4251-b143-87bf4624f2ca',
 //       },
 //     ],
+// cmpsOrder: ["StatusPicker", "DatePicker","GradePicker"],
 //   })
 //   .then((x) => console.log(x))
 

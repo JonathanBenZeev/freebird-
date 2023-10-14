@@ -63,7 +63,7 @@ export function ApplicantIndex() {
             <div>filter header</div>
             <main>
                 {/* <button onClick={onAddApplicant}>Add Applicant ⛐</button> */}
-                <ApplicantList applicants={stay.applicants}/>
+                <ApplicantList stay={stay}/>
                 {/* <ul className="applicant-list">
                     {applicants.map(applicant =>
                         <li className="applicant-preview" key={applicant._id}>

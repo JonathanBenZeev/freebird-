@@ -1,6 +1,23 @@
 import { MdCheckBoxOutlineBlank } from 'react-icons/md'
 import { MdCheckBox } from 'react-icons/md'
-export const ApplicantHeader = ({ onSelectAll, selectedAll ,isMainCheckbox,onClickMainCheckbox}) => {
+export const ApplicantHeader = ({
+  cmpsOrder,
+  isMainCheckbox,
+  onClickMainCheckbox,
+}) => {
+  console.log(cmpsOrder)
+  function getTitleName(cmpOrder) {
+    switch (cmpOrder) {
+        case 'StatusPicker':
+            return 'Status'
+        case 'DatePicker':
+            return 'Date'
+        case 'GradePicker':
+            return 'MATCH'
+        default: return ''
+    }
+}
+
   return (
     <section className='applicant-header'>
       {/* <div className='check-box'>
@@ -18,8 +35,15 @@ export const ApplicantHeader = ({ onSelectAll, selectedAll ,isMainCheckbox,onCli
         )}
       </div>
       <div className='lead'>
-        <span>LEAD NAME</span>
+        <span>Lead name</span>
       </div>
+      {cmpsOrder.map((title, idx) => {
+        return (
+          <div className='lead' key={idx}>
+            <span>{getTitleName(title)}</span>
+          </div>
+        )
+      })}
     </section>
   )
 }

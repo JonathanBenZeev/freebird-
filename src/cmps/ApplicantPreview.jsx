@@ -3,26 +3,21 @@ import { MdCheckBox } from 'react-icons/md'
 import { BiTimeFive } from 'react-icons/bi'
 import { useEffect, useState } from 'react'
 
-export const ApplicantPreview = ({ applicant, selectedAll, onSelectAll,isMainCheckbox,handleCheckboxChange }) => {
-  // const [selected, setSelected] = useState(false)
+export const ApplicantPreview = ({
+  applicant,
+  isMainCheckbox,
+  handleCheckboxChange,
+}) => {
   const [isClick, setIsClick] = useState(false)
-  // useEffect(() => {
-  //   if (!selectedAll) setSelected(false)
-  // }, [selectedAll])
+
   useEffect(() => {
     setIsClick(isMainCheckbox.isActive)
   }, [isMainCheckbox])
-  
+
   function onCheckBoxChange() {
     handleCheckboxChange(applicant)
     setIsClick(!isClick)
-}
-  // const onSetSelected = () => {
-  //   if (!selected && selectedAll) {
-  //     onSelectAll()
-  //   }
-  //   setSelected((prevState) => !prevState)
-  // }
+  }
 
   const { lead } = applicant
   return (
