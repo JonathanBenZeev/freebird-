@@ -1,0 +1,29 @@
+// Setup
+@import 'setup/variables';
+@import 'setup/functions';
+@import 'setup/mixins';
+@import 'setup/typography';
+
+// Basics
+@import 'basics/helpers';
+@import 'basics/layout';
+@import 'basics/base';
+@import 'basics/links';
+@import 'basics/forms';
+
+// Pages
+// @import "views/AboutUs";
+// @import "views/HomePage";
+@import 'pages/ApplicantIndex';
+// @import "views/BabaIndex";
+// @import "views/ReviewIndex";
+// @import "views/UserDetails";
+
+// Components
+@import 'cmps/ApplicantList';
+@import 'cmps/ApplicantPreview';
+@import 'cmps/ApplicantHeader';
+// @import "cmps/AppHeader";
+// @import "cmps/AppFooter";
+// @import "cmps/UserMsg";
+// @import "cmps/ShoppingCart";

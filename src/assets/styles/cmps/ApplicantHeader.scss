@@ -1,0 +1,30 @@
+.applicant-header {
+  padding-inline-start: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 40px;
+  border-bottom: 0.1em solid $clrBorders;
+  background-color: rgba(212, 211, 211, 0.123);
+  & > * {
+    border-inline-end: 0.1em solid $clrBorders;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .select {
+    width: 2rem;
+    svg {
+      width: 21px;
+      height: 21px;
+      color: $clrBorders;
+      &.fill {
+        color: #0073ea;
+      }
+    }
+  }
+  .lead {
+    width: 15rem;
+    font-size: 16px;
+  }
+}
