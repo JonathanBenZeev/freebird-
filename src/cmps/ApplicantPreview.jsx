@@ -3,25 +3,33 @@ import { MdCheckBox } from 'react-icons/md'
 import { BiTimeFive } from 'react-icons/bi'
 import { useEffect, useState } from 'react'
 
-export const ApplicantPreview = ({ applicant, selectedAll, onSelectAll }) => {
-  const [selected, setSelected] = useState(false)
+export const ApplicantPreview = ({ applicant, selectedAll, onSelectAll,isMainCheckbox,handleCheckboxChange }) => {
+  // const [selected, setSelected] = useState(false)
+  const [isClick, setIsClick] = useState(false)
+  // useEffect(() => {
+  //   if (!selectedAll) setSelected(false)
+  // }, [selectedAll])
   useEffect(() => {
-    if (!selectedAll) setSelected(false)
-  }, [selectedAll])
+    setIsClick(isMainCheckbox.isActive)
+  }, [isMainCheckbox])
+  
+  function onCheckBoxChange() {
+    handleCheckboxChange(applicant)
+    setIsClick(!isClick)
+}
+  // const onSetSelected = () => {
+  //   if (!selected && selectedAll) {
+  //     onSelectAll()
+  //   }
+  //   setSelected((prevState) => !prevState)
+  // }
 
-  const onSetSelected = () => {
-    if (!selected && selectedAll) {
-      onSelectAll()
-    }
-    setSelected((prevState) => !prevState)
-  }
-
- const {lead}=applicant
+  const { lead } = applicant
   return (
     <li className='applicant-preview'>
       <section className='applicant-preview-container'>
-        <div className='select-item' onClick={onSetSelected}>
-          {selected || selectedAll ? (
+        <div className='select-item' onClick={onCheckBoxChange}>
+          {isClick ? (
             <MdCheckBox className='fill' />
           ) : (
             <MdCheckBoxOutlineBlank />

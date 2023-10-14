@@ -1,10 +1,17 @@
 import { MdCheckBoxOutlineBlank } from 'react-icons/md'
 import { MdCheckBox } from 'react-icons/md'
-export const ApplicantHeader = ({ onSelectAll, selectedAll }) => {
+export const ApplicantHeader = ({ onSelectAll, selectedAll ,isMainCheckbox,onClickMainCheckbox}) => {
   return (
     <section className='applicant-header'>
-      <div className='select' onClick={onSelectAll}>
-        {selectedAll ? (
+      {/* <div className='check-box'>
+        <input
+          type='checkbox'
+          checked={true}
+          // onChange={onClickMainCheckbox}
+        />
+      </div> */}
+      <div className='select' onClick={onClickMainCheckbox}>
+        {isMainCheckbox ? (
           <MdCheckBox className='fill' />
         ) : (
           <MdCheckBoxOutlineBlank />
